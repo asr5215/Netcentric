@@ -169,16 +169,17 @@
 			<hr>
 			
 			<h4>Order total:</h4>
-			<button type="button"> Total cost </button>
+			<button type="button" onclick = "computeTotalCost()"> Total cost </button>
 			<input id="total" type="text" name="total" value="$0.00" disabled>
 			
 			<h4>Submit order:</h4>
 			<div>
-				<button id="submit" type="button"> Submit Order </button>
+				<button id="submit" type="button" onclick="check()"> Submit Order </button>
 				<button id="clear" type="reset"> Clear Order Form </button>
 			</div>
 			
-			<hr>				
+			<hr>		
+	<div id="snackbar">Error</div>		
 	</article>
 	<script type = "text/javascript"  src = "asg3.js"></script>
 </body>
