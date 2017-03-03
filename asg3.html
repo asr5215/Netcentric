@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+<html lang=en>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" //>
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-red.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> 
+
+<link rel="stylesheet" href = "style.css"/>
+<title> Pizza Order Form </title>
+</head>
+<body>
+	<div id="myHeader" >
+		<h2> Pizza Order Form </h2>
+	</div>
+	
+	<article>
+		<table border="1" width="30%">
+			<tr>
+				<th colspan="2"> ---Pizza Menu---</th>
+			</tr>
+			<tr>
+				<td> 10" Small </td>
+				<td> $6.00 </td>
+			</tr>
+			<tr>
+				<td> 14" Medium </td>
+				<td> $10.75 </td>
+			</tr>
+			<tr>
+				<td> 16" Large </td>
+				<td> $11.50 </td>
+			</tr>
+			<tr>
+				<td> One Topping for 10" Pizza </td>
+				<td> $1.00 </td>
+			</tr>
+			<tr>
+				<td> One Topping for 14" or 16" Pizza </td>
+				<td> $2.00 </td>
+			</tr>
+		</table>
+		
+		
+		<hr>
+		<center><h5> Please complete the following form. Click "Submit Order" to place your order.</h5></center>	
+		<hr>
+		
+		<form>
+			<div id="size">
+				<h4>Select a size:</h4>
+				<label><input type="radio" name="size" value="Small"> Small</label>
+				<label><input type="radio" name="size" value="Medium"> Medium</label>
+				<label><input type="radio" name="size" value="Large"> Large</label>
+			</div>
+			<br>
+			<div id="toppings">
+				<h4>Select your toppings:</h4>
+				<label><input type="checkbox" name="toppings" value="Pepperoni"> Pepperoni</label>
+				<label><input type="checkbox" name="toppings" value="Sausage"> Sausage</label>
+				<label><input type="checkbox" name="toppings" value="Mushrooms"> Mushrooms</label>
+				<label><input type="checkbox" name="toppings" value="Onions"> Onions</label>
+				<label><input type="checkbox" name="toppings" value="Green Peppers"> Green Peppers</label>
+				<label><input type="checkbox" name="toppings" value="Black Olives"> Black Olives</label>
+			</div>
+			<br>
+			<div id="delivery">
+				<h4>Select pickup or delivery:</h4>
+				<label><input type="radio" name="delivery" value="Pickup"> Pickup</label>
+				<label><input type="radio" name="delivery" value="Delivery"> Delivery</label>
+			</div>
+			<br>
+			<div id="contact">
+				<h4>Enter your contact information:</h4>
+				<label>Name:</label>
+				<input id="name" type="text" name="name" placeholder="Your name.."><br>
+				<label>Phone number:</label>
+				<input id="phone" type="text" name="phone" placeholder="###-###-####"><br>
+			</div>
+			<br>
+			<div id="payment">
+				<h4>Select a payment method:</h4>
+				<label><input type="radio" name="payment" value="Cash"> Cash</label>
+				<label><input type="radio" name="payment" value="Credit"> Credit</label>
+			</div>
+			<br>
+			<div id="payInfo">
+				<h4>Enter your payment information (credit customers only):</h4>
+				<label><input type="radio" name="payInfo" value="Visa"> Visa</label>
+				<label><input type="radio" name="payInfo" value="MasterCard"> MasterCard</label>
+				<label><input type="radio" name="payInfo" value="Discover"> Discover</label>
+				<br>
+				<label>Card number:</label>
+				<input id="cardNum" type="text" name="cardNum" placeholder="#### #### #### ####"><br>
+				<label>Experiation date:</label>
+				<input id="cardExp" type="text" name="cardExp" placeholder="mm/yy"><br>
+				<label>Security code:</label>
+				<input id="cardCode" type="text" name="cardCode" placeholder="###">
+			</div>
+			<br>
+			<div id="address">
+				<h4>Enter your address (delivery customers only):</h4>
+				<label>Street Address:</label>
+				<input type="text" name="street"><br>
+				<label>City:</label>
+				<input type="text" name="city"><br>
+				<label>State:</label>
+				<select>
+					<option value="1"> Alabama </option>
+					<option value="2"> Alaska </option>
+					<option value="3"> Arizona </option>
+					<option value="4"> Arkansas </option>
+					<option value="5"> California </option>
+					<option value="6"> Colorado </option>
+					<option value="7"> Conneticut </option>
+					<option value="8"> Delaware </option>
+					<option value="9"> Florida </option>
+					<option value="10"> Georgia </option>
+					<option value="11"> Hawaii </option>
+					<option value="12"> Idaho </option>
+					<option value="13"> Illinois </option>
+					<option value="14"> Indiana </option>
+					<option value="15"> Iowa </option>
+					<option value="16"> Kansas </option>
+					<option value="17"> Kentucky </option>
+					<option value="18"> Louisiana </option>
+					<option value="19"> Maine </option>
+					<option value="20"> Maryland </option>
+					<option value="21"> Massachusetts </option>
+					<option value="22"> Michigan </option>
+					<option value="23"> Minnesota </option>
+					<option value="24"> Mississippi </option>
+					<option value="25"> Missouri </option>
+					<option value="26"> Montana </option>
+					<option value="27"> Nebraska </option>
+					<option value="28"> Nevada </option>
+					<option value="29"> New Hampshire </option>
+					<option value="30"> New Jersey </option>
+					<option value="31"> New Mexico </option>
+					<option value="32"> New York </option>
+					<option value="33"> North Carolina </option>
+					<option value="34"> North Dakota </option>
+					<option value="35"> Ohio </option>
+					<option value="36"> Oklahoma </option>
+					<option value="37"> Oregon </option>
+					<option value="38"> Pennsylvania </option>
+					<option value="39"> Rhode Island </option>
+					<option value="40"> South Carolina </option>
+					<option value="41"> South Dakota </option>
+					<option value="42"> Tennessee </option>
+					<option value="43"> Texas </option>
+					<option value="44"> Utah </option>
+					<option value="45"> Vermont </option>
+					<option value="46"> Virginia </option>
+					<option value="47"> Washington </option>
+					<option value="48"> West Virginia </option>
+					<option value="49"> Wisconsin </option>
+					<option value="50"> Wyoming </option>
+				</select><br>
+				<label>Zip:</label>
+				<input type="text" name="zip">
+			</div>
+			
+			<hr>
+			
+			<h4>Order total:</h4>
+			<button type="button"> Total cost </button>
+			<input id="total" type="text" name="total" value="$0.00" disabled>
+			
+			<h4>Submit order:</h4>
+			<div>
+				<button id="submit" type="button"> Submit Order </button>
+				<button id="clear" type="reset"> Clear Order Form </button>
+			</div>
+			
+			<hr>				
+	</article>
+	<script type = "text/javascript"  src = "asg3.js"></script>
+</body>
+</html>
