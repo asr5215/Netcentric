@@ -1,0 +1,11 @@
+[1, 2, 3, 4]
+[H|_]. = car
+[_|T]. = cdr
+[H|T] = cadr
+[-|[H|_]] = cadr.
+[_|[_|T]]. = cddr.
+
+length([1,a,b],L).
+how to do:
+length([],0).
+length([_|T], L) :- length(T, LT), L is LT + 1.

@@ -1,0 +1,46 @@
+programming language -> what it can do - features or meaning -> semantics -> informal language and examples
+					 -> how to write a program - rules or grammar -> syntax -> BNF
+					 
+					 
+lexical structure & phrase structure
+	result = 2 * count + 17.65;
+	
+	syntax (rules)
+	fixed parts:
+		operators
+		keywords
+		
+	variable parts:
+		use rules
+		recursive description
+	
+	smallest parts:
+		integers
+		variables
+		float
+		
+regular -> context free grammar -> context sensitive grammar -> recursive
+
+BNF:
+	terminals -> lexical parts of a programming language (keywords, int,op, punctuation, ...)
+	non-terminals -> concept that can be divided into smaller components <book>
+	s -> starting rule ->
+	rules -> LHS ::= RHS -> RHS is 0 or more terminals or non-terminals
+	
+	<program> ::= <s_exprs>
+	<book> ::= (1)<frontpage> (2)<TOC> (3)<chapters> (4)<index>
+
+BNF can be used in two different ways:
+	Language Recognizers
+	Language Generators
+
+How do we define the syntax of:
+	a) an assignment statement
+		<var> = <exp>;
+		<var>[<exp>] = <exp>;
+		<asg scalar> = <exp>;
+	b) a list of one or more function arguments
+		<arglist> ::= <var>
+		<arglist> ::= <var>, <arglist>
+	c) an if statement without an else part
+	d) a list of zero or more function arguments

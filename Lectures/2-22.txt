@@ -1,0 +1,24 @@
+= -> unification
+is -> assignment
+
+which query is fastest?
+male(x), parent(x, charles). or 
+parent(x, charles), male(x).
+
+edge(a,b). edge(b,c). edge(c,d). edge(d,e). edge(b,e). edge(d,f)
+path(x,y) :- path(x,z), edge(z,y).
+path(x,x).
+
+abs(X, X) :- X >= 0 !.
+abs(X, A) :- Y is -X.
+
+max(X, Y, X) :- X >= Y.
+max(X, Y, Y) :- X < Y.
+
+Lists - Prolog
+[a,b,c] = [H|T].
+[a] = [H|T]
+[] = [H|T]
+[1,[2,3]] = [H|T]
+[A,B,C] = [H1|[H2|H3]]
+[a,b,c,d,e,f,g] = [_, _ |[H|T] -> H=[c] T=[d,e,f,g]

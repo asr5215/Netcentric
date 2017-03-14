@@ -1,0 +1,17 @@
+Bprolog -> ** is to the power of
+
+X =< y.
+X =:= y.
+X =\= Y.
+Factorial (0,1)
+Factorial (n, fact):=
+	n > 0,
+	n1 is n - 1,
+	factorial (n1, fact1),
+	fact is n * fact1
+	
+fact is N * factorial(n1, fact1).
+
+distance problem
+distance(x, y) gives all distances that all the cars have
+distance(_, y), y > 2000 gives you all the distances over 2000
