@@ -62,9 +62,8 @@ function checkPayment(){
 		if (delivery[0].checked){ // pick up
             return true;
 		}
-		else{ // delivery
-			return checkAddress();
-		}
+		//show("Check Address");
+		return checkAddress();
 	}
 	else if (payment[1].checked){ // credit
 		if (!checkPaymentInfo()) {
@@ -73,10 +72,7 @@ function checkPayment(){
         if (delivery[0].checked){ // pick up
             return true;
         }
-        else{ // delivery
-            return checkAddress();
-        }
-		return true;
+        return checkAddress();
 	}
 	show("Payment method must be selected.");
 	return false;
@@ -120,12 +116,24 @@ function checkAddress (){
     var street = document.getElementById("street").value;
     var city = document.getElementById("city").value;
     var zip = document.getElementById("zip").value;
-    var state = document.getElementById("state");
-    if (street == "" || city == "" || zip == "" || state.value == "0"){
-        show("Address field must be completely filled out.");
-        return false;
-    }
-    show("checking");
+    var state = document.getElementById("State");
+	if (street == ""){
+        show("Street field must be filled out.");
+		return false;
+	}
+	if (city == ""){
+        show("City field must be filled out.");
+		return false;
+	}
+	if (zip == ""){
+        show("Zip field must be filled out.");
+		return false;
+	}
+	if (state.value == "0"){
+        show("State must be selected.");
+		return false;
+	}
+	//show(zip);
     if (zip.search("[0-9][0-9][0-9][0-9][0-9]") != 0 || zip.length != 5){
         show("Format of zip code is incorrect.");
         return false;
