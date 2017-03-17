@@ -1,4 +1,4 @@
-function check(){/*
+function check(){
     if (!checkSize()){
 	}
     else if(!checkDelivery()){
@@ -6,8 +6,11 @@ function check(){/*
 	else if (!checkName()){
 	}
 	else if (!checkPhone()){
-	}*/
-	if (!checkPayment()){
+	}
+	else if (!checkPayment()){
+	}
+	else {
+		show("Thanks for ordering!! :)");
 	}
 }
 
