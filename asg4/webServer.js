@@ -1,4 +1,5 @@
 var http = require('http'), qs = require('querystring');
+var fs = require('fs');
 
 function handle_incoming_request(req, res){
 	//get post data for request
@@ -28,11 +29,30 @@ function handle_incoming_request(req, res){
 				console.log(POST_data);
 			}
 			res.writeHead(200, {'Content-Type':'text/plain'});
+			var output = "<p>Please fill out this form to help me improve my Web page.</p>";
 			res.end(JSON.stringify(POST_data));
 		}
 	);
 }
-				
 
-var s = http.createServer(handle_incoming_request);
+function displayForm(res) {
+    fs.readFile('RateMyPageForm.html', function (err, data) {
+        res.writeHead(200, {
+            'Content-Type': 'text/html',
+                'Content-Length': data.length
+        });
+        res.write(data);
+        res.end();
+    });
+}
+				
+var s = http.createServer(function (req, res) {
+    if (req.method.toLowerCase() == 'get') {
+        displayForm(res);
+    } else if (req.method.toLowerCase() == 'post') {
+		handle_incoming_request(req, res);
+    }
+
+});
+//var s = http.createServer(handle_incoming_request);
 s.listen(8080);
