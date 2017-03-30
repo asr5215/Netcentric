@@ -28,12 +28,17 @@ function handle_incoming_request(req, res){
 				console.log(POST_data);
 			}
 			//var parsedJSON = JSON.parse(POST_data);
-			res.writeHead(200, {'Content-Type':'text/plain'});
+			res.writeHead(200, {'Content-Type':'text/html'});
 			var output = "<h1>Form Received:</h1><br>";
-			//output += "<h1>Form Completed</h1>";
+			
+			output += "<h1>Form Completed</h1><br>";
 			output += POST_data.formName;
-			output += "\n";
+			output += "<br>";
+			
+			output += "<h1>Summary of Responses</h1>";
+			output += "<ul><li>";
 			output += POST_data.name;
+			output += "</li></ul>";
 			res.end(output);
 			//res.end(output);
 		}
