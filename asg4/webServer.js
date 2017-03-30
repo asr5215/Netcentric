@@ -29,19 +29,21 @@ function handle_incoming_request(req, res){
 			}
 			//var parsedJSON = JSON.parse(POST_data);
 			res.writeHead(200, {'Content-Type':'text/html'});
-			var output = "<h1>Form Received:</h1><br>";
+			var output = "<style> p {margin-left: 2%;} </style>";
+			output += "<h1>Form Received:</h1>";
 			
-			output += "<h1>Form Completed</h1><br>";
-			output += POST_data.formName;
-			output += "<br>";
+			output += "<h1>Form Completed</h1>";
+			output += "<p>" + POST_data.formName + "</p><br>";
 			
 			output += "<h1>Summary of Responses</h1>";
-			output += "<ul><li>" + POST_data.name + "</li>";
-			output += "<li>" + POST_data.comments + "</li>";
-			output += "<li>" + POST_data.email + "</li>";
-			output += "<li>" + POST_data.thingsliked + "</li>";
-			output += "<li>" + POST_data.howtosite + "</li>";
-			output += "<li>" + POST_data.rating + "</li>";
+			output += "<p><b> Name: </b>" + POST_data.name + "</p>";
+			output += "<p><b> Comment: </b>" + POST_data.comments + "</p>";
+			output += "<p><b> E-mail: </b>" + POST_data.email + "</p>";
+			output += "<p><b> Things Liked: </b>" + POST_data.thingsliked + "</p>";
+			output += "<p><b> How you found the Web page: </b>" + POST_data.howtosite + "</p>";
+			output += "<p><b> How you rated the Web page: </b>" + POST_data.rating + "</p>";
+			
+			output += "<h1> Thank you for your response! </h1>";
 			res.end(output);
 			//res.end(output);
 		}
