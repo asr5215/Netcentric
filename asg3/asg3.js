@@ -1,3 +1,4 @@
+//Validation checks
 function check(){
     if (!checkSize()){
 	}
@@ -9,11 +10,13 @@ function check(){
 	}
 	else if (!checkPayment()){
 	}
+	//final snackbar, there's one for each error
 	else {
 		show("Thanks for ordering!! :)");
 	}
 }
 
+//Checks size
 function checkSize(){
     var size = document.getElementsByName("size");
     for (var i = 0; i < size.length; i++){
@@ -25,6 +28,7 @@ function checkSize(){
 	return false;
 }
 
+//Checks delivery
 function checkDelivery(){
     var delivery = document.getElementsByName("delivery");
     for (var i = 0; i < delivery.length; i++){
@@ -37,6 +41,7 @@ function checkDelivery(){
 
 }
 
+//Checks name
 function checkName(){
 	var name = document.getElementById("name").value;
 	if (name == ""){
@@ -45,6 +50,7 @@ function checkName(){
 	return name != "";
 }
 
+//Checks phone number
 function checkPhone(){
 	var phone = document.getElementById("phone").value;
 	if (phone == ""){
@@ -58,9 +64,11 @@ function checkPhone(){
 	return false;
 }
 
+//Checks type of payment and pickup/delivery
 function checkPayment(){
 	var payment = document.getElementsByName("payment");
     var delivery = document.getElementsByName("delivery");
+	//checks cash
 	if (payment[0].checked){ // cash
 		if (delivery[0].checked){ // pick up
             return true;
@@ -68,6 +76,7 @@ function checkPayment(){
 		//show("Check Address");
 		return checkAddress();
 	}
+	//checks credit
 	else if (payment[1].checked){ // credit
 		if (!checkPaymentInfo()) {
             return false;
@@ -81,6 +90,7 @@ function checkPayment(){
 	return false;
 }
 
+//checks payment info (card info)
 function checkPaymentInfo(){
 	var payInfo = document.getElementsByName("payInfo");
 	var isTrue = false;
@@ -115,6 +125,7 @@ function checkPaymentInfo(){
 	return true;
 }
 
+//checks address
 function checkAddress (){
     var street = document.getElementById("street").value;
     var city = document.getElementById("city").value;
@@ -144,6 +155,7 @@ function checkAddress (){
 	return true;
 }
 
+//function for total button
 function computeTotalCost(){
 	if (!checkSize()){
 		return;
@@ -184,6 +196,7 @@ function computeTotalCost(){
 	document.getElementById("total").value = "$" + cost.toFixed(2);
 }
 
+//snackbar function
 function show(a){
     var x = document.getElementById("snackbar");
     x.innerHTML = a;
