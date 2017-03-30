@@ -36,9 +36,12 @@ function handle_incoming_request(req, res){
 			output += "<br>";
 			
 			output += "<h1>Summary of Responses</h1>";
-			output += "<ul><li>";
-			output += POST_data.name;
-			output += "</li></ul>";
+			output += "<ul><li>" + POST_data.name + "</li>";
+			output += "<li>" + POST_data.comments + "</li>";
+			output += "<li>" + POST_data.email + "</li>";
+			output += "<li>" + POST_data.thingsliked + "</li>";
+			output += "<li>" + POST_data.howtosite + "</li>";
+			output += "<li>" + POST_data.rating + "</li>";
 			res.end(output);
 			//res.end(output);
 		}
