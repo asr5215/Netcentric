@@ -3,7 +3,7 @@ var fs = require('fs');
 
 function handle_incoming_request(req, res){
 	//get post data for request
-	var body = ' ';
+	var body = '';
 	req.on(
 		'readable', 
 		function (){
@@ -17,7 +17,6 @@ function handle_incoming_request(req, res){
 			}
 		}
 	);
-	
 	//process post data
 	req.on(
 		'end', 
@@ -28,9 +27,15 @@ function handle_incoming_request(req, res){
 				//code to display object as text in command window
 				console.log(POST_data);
 			}
+			//var parsedJSON = JSON.parse(POST_data);
 			res.writeHead(200, {'Content-Type':'text/plain'});
-			var output = "<p>Please fill out this form to help me improve my Web page.</p>";
-			res.end(JSON.stringify(POST_data));
+			var output = "<h1>Form Received:</h1><br>";
+			//output += "<h1>Form Completed</h1>";
+			output += POST_data.formName;
+			output += "\n";
+			output += POST_data.name;
+			res.end(output);
+			//res.end(output);
 		}
 	);
 }
