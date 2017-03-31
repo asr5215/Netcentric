@@ -28,12 +28,14 @@ function handle_incoming_request(req, res){
 				console.log(POST_data);
 			}
 			//var parsedJSON = JSON.parse(POST_data);
+			var d = Date();
 			res.writeHead(200, {'Content-Type':'text/html'});
 			var output = "<style> p {margin-left: 2%;} </style>";
 			output += "<h1>Form Received:</h1>";
+			output += "<p>" + d.toLocaleString() + "</p>";
 			
 			output += "<h1>Form Completed</h1>";
-			output += "<p>" + POST_data.formName + "</p><br>";
+			output += "<p>" + POST_data.formName + "</p>";
 			
 			output += "<h1>Summary of Responses</h1>";
 			output += "<p><b> Name: </b>" + POST_data.name + "</p>";
