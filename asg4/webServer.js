@@ -28,7 +28,7 @@ function handle_incoming_request(req, res){
 				console.log(POST_data);
 			}
 			//var parsedJSON = JSON.parse(POST_data);
-			var d = Date();
+			var d = new Date();
 			res.writeHead(200, {'Content-Type':'text/html'});
 			var output = "<style> p {margin-left: 2%;} </style>";
 			output += "<h1>Form Received:</h1>";
