@@ -30,6 +30,7 @@ function handle_incoming_request(req, res){
 			//var parsedJSON = JSON.parse(POST_data);
 			var d = new Date();
 			res.writeHead(200, {'Content-Type':'text/html'});
+			//start output for html
 			var output = "<style> p {margin-left: 2%;} </style>";
 			output += "<h1>Form Received:</h1>";
 			output += "<p>" + d.toLocaleString() + "</p>";
@@ -42,13 +43,16 @@ function handle_incoming_request(req, res){
 			output += "<p><b> Comment: </b>" + POST_data.comments + "</p>";
 			output += "<p><b> E-mail: </b>" + POST_data.email + "</p>";
 			output += "<p><b> Things Liked: </b>";
+			//if no checkbox
 			if (POST_data.thingsliked == undefined){
 				output += "None";
 			}
 			else{
+				//if one checkbox
 				if (POST_data.thingsliked[0].length == 1){
 					output += POST_data.thingsliked;
 				}
+				//if more than one checkbox
 				else{
 					output += POST_data.thingsliked[0];
 					for (var i = 1; i < POST_data.thingsliked.length; i++){
@@ -62,11 +66,11 @@ function handle_incoming_request(req, res){
 			
 			output += "<h1> Thank you for your response! </h1>";
 			res.end(output);
-			//res.end(output);
+			// end output for html
 		}
 	);
 }
-
+// displayForm code from https://www.sitepoint.com/creating-and-handling-forms-in-node-js/
 function displayForm(res) {
     fs.readFile('RateMyPageForm.html', function (err, data) {
         res.writeHead(200, {
@@ -79,7 +83,7 @@ function displayForm(res) {
 }
 				
 var s = http.createServer(function (req, res) {
-    if (req.method.toLowerCase() == 'get') {
+    if (req.method.toLowerCase() != 'post') {
         displayForm(res);
     } else if (req.method.toLowerCase() == 'post') {
 		handle_incoming_request(req, res);
