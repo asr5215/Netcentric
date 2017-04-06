@@ -41,7 +41,22 @@ function handle_incoming_request(req, res){
 			output += "<p><b> Name: </b>" + POST_data.name + "</p>";
 			output += "<p><b> Comment: </b>" + POST_data.comments + "</p>";
 			output += "<p><b> E-mail: </b>" + POST_data.email + "</p>";
-			output += "<p><b> Things Liked: </b>" + POST_data.thingsliked + "</p>";
+			output += "<p><b> Things Liked: </b>";
+			if (POST_data.thingsliked == undefined){
+				output += "None";
+			}
+			else{
+				if (POST_data.thingsliked[0].length == 1){
+					output += POST_data.thingsliked;
+				}
+				else{
+					output += POST_data.thingsliked[0];
+					for (var i = 1; i < POST_data.thingsliked.length; i++){
+						output += ", " +POST_data.thingsliked[i];
+					}
+				}
+			}
+			output += "</p>";
 			output += "<p><b> How you found the Web page: </b>" + POST_data.howtosite + "</p>";
 			output += "<p><b> How you rated the Web page: </b>" + POST_data.rating + "</p>";
 			
